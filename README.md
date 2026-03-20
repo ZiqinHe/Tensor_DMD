@@ -12,23 +12,24 @@ In particular, this repository includes two numerical experiments corresponding 
 
 ## Overview
 
-Given tensor snapshots
-\[
-\mathscr{X}_0, \mathscr{X}_1, \dots, \mathscr{X}_T,
-\]
+This repository implements **Tensor Dynamic Mode Decomposition (TDMD)** based on the **T-product** for third-order dynamical systems.
+
+Given a sequence of tensor snapshots  
+X₀, X₁, …, X_T,  
 TDMD models the dynamics as
-\[
-\mathscr{X}_{t+1} = \mathscr{A} \star \mathscr{X}_t,
-\]
-where \(\star\) denotes the **T-product**.  
-Compared with classical DMD on vectorized data, TDMD works directly with 3D arrays and preserves the intrinsic tensor structure.
 
-The implementation in this repository focuses on the **T-product formulation** and uses it for:
+X_{t+1} = A ★ X_t,
 
-- low-rank tensor dynamical modeling,
-- reconstruction of tensor snapshots,
-- separation of persistent and transient components,
-- comparison with standard matrix-based DMD.
+where ★ denotes the **T-product**.
+
+Unlike classical DMD, which requires flattening multidimensional data into vectors, TDMD operates directly on **3D tensors** and preserves the intrinsic spatial structure of the data.
+
+The implementation in this repository focuses on the **T-product formulation** and demonstrates its use for:
+
+- low-rank tensor dynamical modeling  
+- reconstruction of tensor snapshots  
+- separation of persistent and transient components  
+- comparison with standard matrix-based DMD
 
 ---
 
