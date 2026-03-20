@@ -1,6 +1,6 @@
 # Tensor_DMD
 
-This repository implements **Tensor Dynamic Mode Decomposition (TDMD)** based on the **T-product** for third-order dynamical systems.  
+This repository implements **Tensor Dynamic Mode Decomposition (TDMD)** based on the **Tensor-product** for third-order dynamical systems.  
 The code applies DMD directly to tensor-valued data without flattening the spatial structure into vectors, which allows the method to better preserve multidimensional correlations in applications such as video and climate data.
 
 In particular, this repository includes two numerical experiments corresponding to the examples in the paper:
@@ -20,11 +20,11 @@ TDMD models the dynamics as
 
 X_{t+1} = A ★ X_t,
 
-where ★ denotes the **T-product**.
+where ★ denotes the **Tensor-product**.
 
 Unlike classical DMD, which requires flattening multidimensional data into vectors, TDMD operates directly on **3D tensors** and preserves the intrinsic spatial structure of the data.
 
-The implementation in this repository focuses on the **T-product formulation** and demonstrates its use for:
+The implementation in this repository focuses on the **Tensor-product formulation** and demonstrates its use for:
 
 - low-rank tensor dynamical modeling  
 - reconstruction of tensor snapshots  
@@ -41,7 +41,7 @@ It applies TDMD to a synthetic video sequence and performs **foreground/backgrou
 
 More specifically, the script:
 - loads or generates a 3D video tensor,
-- applies TDMD based on the T-product,
+- applies TDMD based on the Tensor-product and compared with traditional unfolding method,
 - identifies dynamic modes,
 - separates the approximately static **background** from the moving **foreground** object.
 
